@@ -46,6 +46,7 @@ app.get('/', function(req, res) {
             });
         }
 
+        res.set('Content-Type', 'application/rss+xml');
         res.send(feed.xml());
     });
 });
