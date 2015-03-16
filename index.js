@@ -51,6 +51,7 @@ app.get('/feed', function(req, res) {
                 description: 'From ' + item.repository.full_name + ' (' + item.repository.description + ')',
                 url: item.subject.url.replace('api.', '').replace('repos/', ''),
                 date: item.updated_at,
+                guid: '' + item.url + '@' + item.last_read_at,
             });
         }
         console.timeEnd('Feed generation');
