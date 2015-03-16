@@ -32,6 +32,10 @@ app.set('port', Number(process.env.PORT || 3000));
 app.use(morgan());
 
 app.get('/', function(req, res) {
+    res.send('Hello world!');
+});
+
+app.get('/feed', function(req, res) {
     github.notifications.getAll({
         all: true
     }, function(err, ghres) {
