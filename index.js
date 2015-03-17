@@ -77,7 +77,7 @@ app.get('/track/:url', function(req, res) {
     }, function(err, response, body) {
         if (!err && response.statusCode == 200) {
             var obj = JSON.parse(body);
-            var redir = obj._links.html.href;
+            var redir = obj.html_url;
             res.redirect(redir);
         } else {
             res.status(500).send(response);
